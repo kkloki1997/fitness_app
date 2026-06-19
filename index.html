@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#E8621A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Loki Fitness</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -1294,6 +1296,13 @@ async function init(){
   setupNotifications();
 }
 init();
+
+// Service Worker
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("./sw.js").then(r=>
+    console.log("SW registered",r.scope)
+  ).catch(e=>console.log("SW error",e));
+}
 </script>
 </body>
 </html>
