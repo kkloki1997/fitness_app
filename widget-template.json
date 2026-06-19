@@ -1,0 +1,88 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "🔥 LOKI FITNESS",
+      "weight": "Bolder",
+      "size": "Medium",
+      "color": "Accent"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${day}",
+              "size": "ExtraLarge",
+              "weight": "Bolder",
+              "color": "Accent",
+              "horizontalAlignment": "Center"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Day of 84",
+              "size": "Small",
+              "isSubtle": true,
+              "horizontalAlignment": "Center"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${protein}g",
+              "size": "ExtraLarge",
+              "weight": "Bolder",
+              "color": "Accent",
+              "horizontalAlignment": "Center"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Protein",
+              "size": "Small",
+              "isSubtle": true,
+              "horizontalAlignment": "Center"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${water}",
+              "size": "ExtraLarge",
+              "weight": "Bolder",
+              "color": "Accent",
+              "horizontalAlignment": "Center"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Glasses",
+              "size": "Small",
+              "isSubtle": true,
+              "horizontalAlignment": "Center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${training}",
+      "size": "Small",
+      "isSubtle": true
+    }
+  ]
+}

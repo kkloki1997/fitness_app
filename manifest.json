@@ -105,6 +105,9 @@
       "name": "Loki Fitness Daily",
       "description": "Daily protein, water and training stats at a glance",
       "tag": "lokifit-daily",
+      "ms_ac_template": "./widget-template.json",
+      "data": "./widget-data.json",
+      "type": "application/json",
       "screenshots": [
         { "src": "./screenshot1.png", "sizes": "540x960", "label": "Daily stats" }
       ],
