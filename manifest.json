@@ -5,7 +5,7 @@
   "start_url": "./index.html",
   "id": "./index.html",
   "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "display_override": ["window-controls-overlay", "tabbed", "standalone", "browser"],
   "orientation": "portrait-primary",
   "background_color": "#0D0D0D",
   "theme_color": "#E8621A",
@@ -92,5 +92,12 @@
   "scope_extensions": [
     { "origin": "https://kkloki1997.github.io" }
   ],
-  "handle_links": "preferred"
+  "handle_links": "preferred",
+  "note_taking": {
+    "new_note_url": "./index.html"
+  },
+  "tab_strip": {
+    "home_tab": { "url": "./index.html" },
+    "new_tab_button": { "url": "./index.html" }
+  }
 }
