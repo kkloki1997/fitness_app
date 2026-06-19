@@ -434,6 +434,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     <div class="tabs">
       <button class="tab on" onclick="showTab('pl','sched',this)">Schedule</button>
       <button class="tab" onclick="showTab('pl','train',this)">Training</button>
+      <button class="tab" onclick="showTab('pl','knee',this)">🦵 Knee</button>
       <button class="tab" onclick="showTab('pl','diet',this)">Diet</button>
       <button class="tab" onclick="showTab('pl','hair',this)">Hair</button>
       <button class="tab" onclick="showTab('pl','smoke',this)">Smoking</button>
@@ -455,17 +456,60 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       </table></div>
     </div>
     <div class="tsec" id="pl-train">
+      <div class="tip">⚠️ ACL sprain recovery mode — modified program. Deadlifts kept as Romanian DL (minimal knee bend = safe for ACL + strengthens weak lower back). No full squats or high-impact until Wk 9+.</div>
       <div class="cd" style="padding:0;overflow:hidden"><table class="tbl">
         <tr><th>Day</th><th>Type</th><th>Workout</th></tr>
-        <tr><td>Mon</td><td style="color:var(--or);font-weight:700">Push</td><td>Bench 4×8 · Shoulder 3×10 · Incline DB 3×10 · Tricep 3×12 · Lateral Raise 3×15</td></tr>
-        <tr><td>Tue</td><td style="color:var(--or);font-weight:700">Run</td><td>Easy pace. Wk1–3: 3km · Wk4–6: 5km · Wk7–9: 7km · Wk10+: 8km</td></tr>
-        <tr><td>Wed</td><td style="color:var(--or);font-weight:700">Pull</td><td>Deadlift 4×6 · Row 4×8 · Pull-Ups 3×10 · Face Pulls 3×15 · Curls 3×12</td></tr>
-        <tr><td>Thu</td><td style="color:var(--or);font-weight:700">Intervals</td><td>5min warm-up · 6×400m hard (90s rest) · 5min cooldown</td></tr>
-        <tr><td>Fri</td><td style="color:var(--or);font-weight:700">Legs+Core</td><td>Squat 4×8 · RDL 3×10 · Leg Press 3×12 · Plank 3×45s · Leg Raises 3×12</td></tr>
-        <tr><td>Sat</td><td style="color:var(--or);font-weight:700">Long Run</td><td>Wk1–3: 5km · Wk4–6: 7km · Wk7–9: 9km · Wk10+: 10km</td></tr>
-        <tr><td>Sun</td><td style="color:var(--mu);font-weight:700">REST</td><td>Walk · foam roll · stretch</td></tr>
+        <tr><td>Mon</td><td style="color:var(--or);font-weight:700">Upper Push</td><td>Bench 4×8 · Incline DB 3×10 · Shoulder Press 3×10 · Lateral Raise 3×15 · Tricep Pushdown 3×12</td></tr>
+        <tr><td>Tue</td><td style="color:#1a78e8;font-weight:700">Knee Rehab</td><td>TKE 3×15 · SLR 3×15 · Wall Sit 3×30s · Calf Raise 3×20 · Hip Bridge 3×15 + Bike 20min easy</td></tr>
+        <tr><td>Wed</td><td style="color:var(--or);font-weight:700">Upper Pull</td><td>Romanian DL 4×8 · Pull-Ups 4×8 · Cable Row 3×10 · Face Pulls 3×15 · Curls 3×12 · Back Extension 3×12</td></tr>
+        <tr><td>Thu</td><td style="color:#2ab06f;font-weight:700">Endurance</td><td>Bike/Elliptical 25min · Hip Thrust 3×12 · Step-Up 3×10/leg · Banded Clamshell 3×15 · Side Walk 3×20</td></tr>
+        <tr><td>Fri</td><td style="color:var(--or);font-weight:700">Knee+Core</td><td>Step-Down 3×10 · VMO Squat (shallow, pain-free) 3×12 · Nordic Curl 3×8 · Ab Wheel 3×10 · Leg Raise 3×12 · Plank 3×45s</td></tr>
+        <tr><td>Sat</td><td style="color:#2ab06f;font-weight:700">Long Cardio</td><td>Wk 1–4: Bike 35min · Wk 5–8: Jog/Walk intervals 5–7km · Wk 9+: Continuous run 8–10km</td></tr>
+        <tr><td>Sun</td><td style="color:var(--mu);font-weight:700">REST</td><td>Foam roll ITB + quad + hip flexor · 20min easy walk · ice knee if needed</td></tr>
       </table></div>
-      <div class="cd"><h2>Core (every gym session)</h2><ul class="ul"><li>Plank 3×45–60s</li><li>Hanging leg raises 3×12</li><li>Cable crunches 3×15</li></ul></div>
+      <div class="cd"><h2>Core — Every Session 🔥</h2><ul class="ul"><li><strong>Plank</strong> 3×45–60s</li><li><strong>Hanging / lying leg raises</strong> 3×12</li><li><strong>Cable crunches</strong> 3×15</li><li><strong>Dead bug</strong> 3×10/side</li><li><strong>Ab wheel rollout</strong> 3×8–10</li></ul></div>
+      <div class="cd"><h2>Runner Prep (Tue/Thu/Sat)</h2><ul class="ul"><li><strong>Hip flexor stretch</strong> 2×45s — tight hip flexors cause knee problems</li><li><strong>Glute activation</strong> — banded walks before every cardio session</li><li><strong>Single-leg balance</strong> 3×30s — builds proprioception post-ACL</li><li><strong>Calf raises</strong> — every day, absorbs 70% of running impact</li></ul></div>
+    </div>
+    <div class="tsec" id="pl-knee">
+      <div class="tip">🦵 ACL Sprain Recovery — do these exercises every Tue + Fri. Never train through sharp pain. Dull ache = OK. Sharp/swelling = rest.</div>
+      <div class="cd"><h2>Phase 1: Wk 1–4 — Rehab Base</h2><ul class="ul">
+        <li><strong>Terminal Knee Extension (TKE)</strong> 3×15 — band behind knee, straighten fully. #1 VMO activator.</li>
+        <li><strong>Straight Leg Raise (SLR)</strong> 3×15/leg — quad activation without knee bend</li>
+        <li><strong>Wall Sit</strong> 3×30s — build quad endurance, no impact</li>
+        <li><strong>Hip Bridge / Glute Bridge</strong> 3×15 — hammies + glutes protect ACL</li>
+        <li><strong>Calf Raise</strong> 3×20 — reduces strain on ACL during movement</li>
+        <li><strong>Bike (stationary)</strong> 20min easy — safe ROM, no impact</li>
+      </ul></div>
+      <div class="cd"><h2>Phase 2: Wk 5–8 — Progressive Load</h2><ul class="ul">
+        <li><strong>Step-Up</strong> 3×10/leg — low box first (20cm), increase height weekly</li>
+        <li><strong>Step-Down (eccentric)</strong> 3×10 — slow lowering, single leg control</li>
+        <li><strong>VMO Squat (shallow)</strong> 3×12 — bodyweight, only go to 60° max</li>
+        <li><strong>Nordic Curl</strong> 3×8 — hamstring strength, key ACL protector</li>
+        <li><strong>Single-Leg Balance</strong> 3×30s — add wobble board if available</li>
+        <li><strong>Light Jog/Walk intervals</strong> — if pain-free: 1min jog / 2min walk × 8</li>
+      </ul></div>
+      <div class="cd"><h2>Phase 3: Wk 9–12 — Return to Run</h2><ul class="ul">
+        <li><strong>Bulgarian Split Squat</strong> 3×10 — loaded single-leg, no direct knee stress</li>
+        <li><strong>Box Jump (low)</strong> 3×5 — introduce plyometrics only if zero pain</li>
+        <li><strong>Continuous jogging</strong> — build to 5km non-stop before 10k training resumes</li>
+        <li><strong>Running drills</strong> — high knees, A-skips, butt kicks — improve form & protect knee</li>
+      </ul></div>
+      <div class="cd"><h2>Lower Back Strengthening 🏋️</h2><ul class="ul">
+        <li><strong>Romanian Deadlift (RDL)</strong> 4×8 every Wed — hinge at hips, minimal knee bend. Best lower back builder AND safe for ACL.</li>
+        <li><strong>Back Extension / Hyperextension</strong> 3×12 — bodyweight first, then add plate. Do every Wed + Fri.</li>
+        <li><strong>Bird-Dog</strong> 3×10/side — core stability + lower back. Do daily as a warm-up.</li>
+        <li><strong>Cat-Cow stretch</strong> 2×10 — every morning, reduces stiffness</li>
+        <li><strong>Dead Bug</strong> 3×10 — anti-extension core, protects spine under load</li>
+        <li><strong>Avoid:</strong> Sit-ups and crunches if lower back pain flares (they increase disc pressure)</li>
+      </ul></div>
+      <div class="cd"><h2>Daily Dos & Don'ts</h2>
+        <div class="ri"><span style="color:#2ab06f;font-weight:700;width:50px">✅ DO</span><span style="color:var(--mu);font-size:12px">Ice after every session — 15min on, 15min off</span></div>
+        <div class="ri"><span style="color:#2ab06f;font-weight:700;width:50px">✅ DO</span><span style="color:var(--mu);font-size:12px">Compress with a knee sleeve during training</span></div>
+        <div class="ri"><span style="color:#2ab06f;font-weight:700;width:50px">✅ DO</span><span style="color:var(--mu);font-size:12px">Strengthen glutes + hips — they protect the knee</span></div>
+        <div class="ri"><span style="color:var(--or);font-weight:700;width:50px">❌ NO</span><span style="color:var(--mu);font-size:12px">Full squats, conventional deadlifts below knee, heavy lunges until Wk 9+</span></div>
+        <div class="ri"><span style="color:var(--or);font-weight:700;width:50px">❌ NO</span><span style="color:var(--mu);font-size:12px">Running through swelling — rest and ice instead</span></div>
+        <div class="ri"><span style="color:var(--or);font-weight:700;width:50px">❌ NO</span><span style="color:var(--mu);font-size:12px">Pivoting, cutting movements, jumping (Wk 1–4)</span></div>
+      </div>
     </div>
     <div class="tsec" id="pl-diet">
       <div class="tip">Target: 130–140g protein/day · ~2,000 kcal · Cook only in extra virgin olive oil</div>
@@ -496,10 +540,10 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     </div>
     <div class="tsec" id="pl-phases">
       <div class="cd" style="padding:0;overflow:hidden"><table class="tbl">
-        <tr><th>Phase</th><th>Focus</th><th>Long Run</th><th>Smoking</th></tr>
-        <tr><td>Wk 1–4</td><td>Build base</td><td>5km</td><td>5/day</td></tr>
-        <tr><td>Wk 5–8</td><td>Cut fat</td><td>7–8km</td><td>2–3/day</td></tr>
-        <tr><td>Wk 9–12</td><td>Peak 10k</td><td>10km</td><td>QUIT 🎯</td></div>
+        <tr><th>Phase</th><th>Focus</th><th>Cardio</th><th>Knee</th><th>Smoking</th></tr>
+        <tr><td>Wk 1–4</td><td>Rehab + Upper aesthetics</td><td>Bike only</td><td>TKE · SLR · Bridge</td><td>5/day</td></tr>
+        <tr><td>Wk 5–8</td><td>Rebuild + Cut fat</td><td>Jog/Walk 5–7km</td><td>Step-up · Nordic</td><td>2–3/day</td></tr>
+        <tr><td>Wk 9–12</td><td>10k peak + full strength</td><td>Run 8–10km</td><td>Return to full load</td><td>QUIT 🎯</td></tr>
       </table></div>
     </div>
   </div>
@@ -576,13 +620,13 @@ function closePlan() { document.getElementById('modal').classList.remove('on'); 
 // HOME
 // ════════════════════════════════════════
 const WEEK_PLAN = [
-  {day:'Monday',   type:'gym', label:'Push Day 💪', detail:'Bench · Shoulder · Incline DB · Tricep · Lateral Raise'},
-  {day:'Tuesday',  type:'run', label:'Easy Run 🏃', detail:'Conversational pace — check plan for distance'},
-  {day:'Wednesday',type:'gym', label:'Pull Day 💪', detail:'Deadlift · Row · Pull-Ups · Face Pulls · Curls'},
-  {day:'Thursday', type:'run', label:'Intervals 🏃', detail:'6×400m hard with 90s rest'},
-  {day:'Friday',   type:'gym', label:'Legs + Core 💪', detail:'Squat · RDL · Leg Press · Plank · Leg Raises'},
-  {day:'Saturday', type:'run', label:'Long Run 🏃', detail:'Slow and steady — check plan for distance'},
-  {day:'Sunday',   type:'rest',label:'Rest Day 😴', detail:'Walk · foam roll · stretch'},
+  {day:'Monday',   type:'gym', label:'Upper Push + Core 💪', detail:'Bench 4×8 · Incline DB 3×10 · Shoulder Press 3×10 · Lateral Raise 3×15 · Tricep 3×12 · Plank 3×45s · Cable Crunch 3×15'},
+  {day:'Tuesday',  type:'rehab', label:'Knee Rehab + Cardio 🦵', detail:'TKE 3×15 · SLR 3×15 · Wall Sit 3×30s · Calf Raise 3×20 · Hip Bridge 3×15 · Bike/Elliptical 20min easy'},
+  {day:'Wednesday',type:'gym', label:'Upper Pull + Core 💪', detail:'Pull-Ups 4×8 · Cable Row 4×10 · Face Pulls 3×15 · Curls 3×12 · Dead Bug 3×10 · Hanging Leg Raises 3×12'},
+  {day:'Thursday', type:'cardio', label:'Endurance + Glute Work 🏃', detail:'Bike/Elliptical 25min · Hip Thrust 3×12 · Step-Up 3×10/leg · Side-Lying Clam 3×15 · Banded Walk 3×20'},
+  {day:'Friday',   type:'gym', label:'Knee Strength + Core 💪', detail:'Step-Down 3×10 · VMO Squat (shallow) 3×12 · Hip Bridge 3×15 · Nordic Curl 3×8 · Ab Wheel 3×10 · Leg Raise 3×12'},
+  {day:'Saturday', type:'run', label:'Long Cardio 🚴', detail:'Wk1–4: Bike 35min · Wk5–8: Jog/Walk intervals 5–7km · Wk9+: Continuous run 8–10km'},
+  {day:'Sunday',   type:'rest',label:'Rest + Recovery 😴', detail:'Foam roll ITB · quad stretch · hip flexor stretch · 20min walk max'},
 ];
 const CHECKS = ['500ml water on waking 💧','Hit 130g protein 🥩','Train as scheduled 🔥','Sleep by 10 PM 😴','Supplements (Zinc/Biotin/D3) 💊','5-min scalp massage 🧴','Stick to smoking limit 🚭'];
 
