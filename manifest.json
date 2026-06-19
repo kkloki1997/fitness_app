@@ -99,5 +99,20 @@
   "tab_strip": {
     "home_tab": { "url": "./index.html" },
     "new_tab_button": { "url": "./index.html" }
-  }
+  },
+  "widgets": [
+    {
+      "name": "Loki Fitness Daily",
+      "description": "Daily protein, water and training stats at a glance",
+      "tag": "lokifit-daily",
+      "screenshots": [
+        { "src": "./screenshot1.png", "sizes": "540x960", "label": "Daily stats" }
+      ],
+      "icons": [
+        { "src": "./icon-192.png", "sizes": "192x192" }
+      ],
+      "auth": false,
+      "update": 86400
+    }
+  ]
 }
