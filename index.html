@@ -161,12 +161,9 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   <div class="sg">
     <div class="sv"><div class="sn" id="h-day">1</div><div class="sl">Day of 84</div></div>
     <div class="sv"><div class="sn" id="h-wk">1</div><div class="sl">Week of 12</div></div>
-    <div class="sv"><div class="sn" id="h-photos">0</div><div class="sl">Photos</div></div>
-    <div class="sv"><div class="sn" id="h-sessions">0</div><div class="sl">Sessions Done</div></div>
   </div>
 
-  <div class="streak-row">
-    <div class="sk"><div class="sk-n" id="sk-prot">0</div><div class="sk-l">🥩 Protein streak</div></div>
+  <div class="streak-row" style="grid-template-columns:1fr 1fr">
     <div class="sk"><div class="sk-n" id="sk-train">0</div><div class="sk-l">🔥 Training streak</div></div>
     <div class="sk"><div class="sk-n" id="sk-smoke">0</div><div class="sk-l">🚭 No-smoke streak</div></div>
   </div>
@@ -176,11 +173,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     <div id="h-today"></div>
   </div>
 
-  <div class="cd">
-    <h2>Water (Goal: 3.5L / 14 glasses)</h2>
-    <div class="wg" id="water-grid"></div>
-    <div style="font-size:12px;color:var(--mu)" id="water-lbl">0 / 14 glasses</div>
-  </div>
 
   <div class="cd">
     <h2>Daily Checklist</h2>
@@ -628,19 +620,13 @@ const WEEK_PLAN = [
   {day:'Saturday', type:'run', label:'Long Cardio 🚴', detail:'Wk1–4: Bike 35min · Wk5–8: Jog/Walk intervals 5–7km · Wk9+: Continuous run 8–10km'},
   {day:'Sunday',   type:'rest',label:'Rest + Recovery 😴', detail:'Foam roll ITB · quad stretch · hip flexor stretch · 20min walk max'},
 ];
-const CHECKS = ['500ml water on waking 💧','Hit 130g protein 🥩','Train as scheduled 🔥','Sleep by 10 PM 😴','Supplements (Zinc/Biotin/D3) 💊','5-min scalp massage 🧴','Stick to smoking limit 🚭'];
+const CHECKS = ['500ml water on waking 💧','Drink 3.5L water today (14 glasses) 💧','Hit 130g protein 🥩','Train as scheduled 🔥','Sleep by 10 PM 😴','Supplements (Zinc/Biotin/D3) 💊','5-min scalp massage 🧴','Stick to smoking limit 🚭'];
 
 async function renderHome() {
   const dn=dayNum(), wk=Math.ceil(dn/7);
   document.getElementById('h-day').textContent=dn;
   document.getElementById('h-wk').textContent=wk;
   document.getElementById('hdr-sub').textContent=`Day ${dn} of 84 · Wk ${wk} · ${new Date().toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}`;
-
-  const photos=await dbGetAll('photos');
-  document.getElementById('h-photos').textContent=photos.length;
-
-  const prog=await dbGetAll('progress');
-  document.getElementById('h-sessions').textContent=prog.filter(p=>p.done).length;
 
   // Streaks
   await renderStreaks();
@@ -654,9 +640,6 @@ async function renderHome() {
       <div style="font-size:12px;color:var(--mu);margin-top:3px">${plan.detail}</div>
     </div>
     <div style="font-size:12px;color:var(--mu);margin-top:7px">Phase: <strong style="color:var(--tx)">${wk<=4?'1 — Build Base':wk<=8?'2 — Intensity Up':'3 — Peak for 10k'}</strong></div>`;
-
-  // Water tracker
-  renderWater();
 
   // Checklist
   const checkEl=document.getElementById('h-checks');
@@ -694,20 +677,6 @@ async function renderHome() {
   if(log){ if(log.weight) document.getElementById('l-wt').value=log.weight; if(log.smoke!==undefined) document.getElementById('l-sm').value=log.smoke; if(log.run) document.getElementById('l-run').value=log.run; }
 }
 
-function renderWater() {
-  const filled=parseInt(localStorage.getItem('water_'+todayStr())||'0');
-  const grid=document.getElementById('water-grid');
-  grid.innerHTML='';
-  for(let i=0;i<GLASSES;i++){
-    const g=document.createElement('div');
-    g.className='glass'+(i<filled?' on':'');
-    g.textContent='🥛';
-    g.onclick=()=>{ const cur=parseInt(localStorage.getItem('water_'+todayStr())||'0'); const nv=i<cur?i:i+1; localStorage.setItem('water_'+todayStr(),nv); renderWater(); };
-    grid.appendChild(g);
-  }
-  const ml=filled*250;
-  document.getElementById('water-lbl').textContent=`${filled}/${GLASSES} glasses · ${(ml/1000).toFixed(2)}L`;
-}
 
 async function renderStreaks() {
   const logs=await dbGetAll('logs');
@@ -716,14 +685,8 @@ async function renderStreaks() {
   const logMap={}; logs.forEach(l=>logMap[l.date]=l);
   const protMap={}; foods.forEach(f=>{ if(!protMap[f.date]) protMap[f.date]=0; protMap[f.date]+=f.protein; });
 
-  let protStreak=0, trainStreak=0, smokeStreak=0;
+  let trainStreak=0, smokeStreak=0;
   const today=todayStr();
-  for(let i=0;i<TOTAL_DAYS;i++){
-    const d=new Date(); d.setDate(d.getDate()-i);
-    const ds=d.toISOString().slice(0,10);
-    if(ds===today) continue; // skip today (in progress)
-    if((protMap[ds]||0)>=GOAL_PROT) protStreak++; else break;
-  }
   for(let i=0;i<TOTAL_DAYS;i++){
     const d=new Date(); d.setDate(d.getDate()-i);
     const ds=d.toISOString().slice(0,10);
@@ -744,7 +707,6 @@ async function renderStreaks() {
     const smoke=(logMap[ds]?.smoke??0);
     if(smoke<=limit) smokeStreak++; else break;
   }
-  document.getElementById('sk-prot').textContent=protStreak;
   document.getElementById('sk-train').textContent=trainStreak;
   document.getElementById('sk-smoke').textContent=smokeStreak;
 }
