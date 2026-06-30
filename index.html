@@ -452,11 +452,11 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       <div class="cd" style="padding:0;overflow:hidden"><table class="tbl">
         <tr><th>Day</th><th>Type</th><th>Workout</th></tr>
         <tr><td>Mon</td><td style="color:var(--or);font-weight:700">Upper Push</td><td>Bench 4×8 · Incline DB 3×10 · Shoulder Press 3×10 · Lateral Raise 3×15 · Tricep Pushdown 3×12</td></tr>
-        <tr><td>Tue</td><td style="color:#1a78e8;font-weight:700">Knee Rehab</td><td>TKE 3×15 · SLR 3×15 · Wall Sit 3×30s · Calf Raise 3×20 · Hip Bridge 3×15 + Bike 20min easy</td></tr>
+        <tr><td>Tue</td><td style="color:#2ab06f;font-weight:700">Easy Run</td><td>5min walk warm-up · Run 10–15min @ 8kmph (add 2min each week as knee allows) · TKE 3×15 · Hip Bridge 3×15 · Calf Raise 3×20</td></tr>
         <tr><td>Wed</td><td style="color:var(--or);font-weight:700">Upper Pull</td><td>Romanian DL 4×8 · Pull-Ups 4×8 · Cable Row 3×10 · Face Pulls 3×15 · Curls 3×12 · Back Extension 3×12</td></tr>
         <tr><td>Thu</td><td style="color:#2ab06f;font-weight:700">Endurance</td><td>Bike/Elliptical 25min · Hip Thrust 3×12 · Step-Up 3×10/leg · Banded Clamshell 3×15 · Side Walk 3×20</td></tr>
         <tr><td>Fri</td><td style="color:var(--or);font-weight:700">Knee+Core</td><td>Step-Down 3×10 · VMO Squat (shallow, pain-free) 3×12 · Nordic Curl 3×8 · Ab Wheel 3×10 · Leg Raise 3×12 · Plank 3×45s</td></tr>
-        <tr><td>Sat</td><td style="color:#2ab06f;font-weight:700">Long Cardio</td><td>Wk 1–4: Bike 35min · Wk 5–8: Jog/Walk intervals 5–7km · Wk 9+: Continuous run 8–10km</td></tr>
+        <tr><td>Sat</td><td style="color:#2ab06f;font-weight:700">Long Run</td><td>Wk1: 15min · Wk2: 20min · Wk3: 25min · Wk4: 30min · Wk5: 35min · Wk6: 40min · Wk7: 50min · Wk8: 60min · Wk9: 70min · Wk10+: 10km 🎯 — all at easy 8kmph pace, no pushing</td></tr>
         <tr><td>Sun</td><td style="color:var(--mu);font-weight:700">REST</td><td>Foam roll ITB + quad + hip flexor · 20min easy walk · ice knee if needed</td></tr>
       </table></div>
       <div class="cd"><h2>Core — Every Session 🔥</h2><ul class="ul"><li><strong>Plank</strong> 3×45–60s</li><li><strong>Hanging / lying leg raises</strong> 3×12</li><li><strong>Cable crunches</strong> 3×15</li><li><strong>Dead bug</strong> 3×10/side</li><li><strong>Ab wheel rollout</strong> 3×8–10</li></ul></div>
@@ -532,10 +532,10 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     </div>
     <div class="tsec" id="pl-phases">
       <div class="cd" style="padding:0;overflow:hidden"><table class="tbl">
-        <tr><th>Phase</th><th>Focus</th><th>Cardio</th><th>Knee</th><th>Smoking</th></tr>
-        <tr><td>Wk 1–4</td><td>Rehab + Upper aesthetics</td><td>Bike only</td><td>TKE · SLR · Bridge</td><td>5/day</td></tr>
-        <tr><td>Wk 5–8</td><td>Rebuild + Cut fat</td><td>Jog/Walk 5–7km</td><td>Step-up · Nordic</td><td>2–3/day</td></tr>
-        <tr><td>Wk 9–12</td><td>10k peak + full strength</td><td>Run 8–10km</td><td>Return to full load</td><td>QUIT 🎯</td></tr>
+        <tr><th>Phase</th><th>Focus</th><th>Tue Run</th><th>Sat Long Run</th><th>Smoking</th></tr>
+        <tr><td>Wk 1–3</td><td>Base + aesthetics + knee rehab</td><td>10–20min @ 8kmph</td><td>15 → 25min</td><td>5/day</td></tr>
+        <tr><td>Wk 4–7</td><td>Build endurance + cut fat</td><td>20–30min, pace rising</td><td>30 → 50min</td><td>2–3/day</td></tr>
+        <tr><td>Wk 8–10</td><td>10k peak + strength return</td><td>30–40min tempo</td><td>60 → 80min / 10km 🎯</td><td>QUIT 🎯</td></tr>
       </table></div>
     </div>
   </div>
@@ -613,11 +613,11 @@ function closePlan() { document.getElementById('modal').classList.remove('on'); 
 // ════════════════════════════════════════
 const WEEK_PLAN = [
   {day:'Monday',   type:'gym', label:'Upper Push + Core 💪', detail:'Bench 4×8 · Incline DB 3×10 · Shoulder Press 3×10 · Lateral Raise 3×15 · Tricep 3×12 · Plank 3×45s · Cable Crunch 3×15'},
-  {day:'Tuesday',  type:'rehab', label:'Knee Rehab + Cardio 🦵', detail:'TKE 3×15 · SLR 3×15 · Wall Sit 3×30s · Calf Raise 3×20 · Hip Bridge 3×15 · Bike/Elliptical 20min easy'},
+  {day:'Tuesday',  type:'run', label:'Easy Run + Knee Rehab 🏃', detail:'Warm-up 5min walk · Run 10–15min at 8kmph (no pain = add 2min/week) · TKE 3×15 · Hip Bridge 3×15 · Calf Raise 3×20'},
   {day:'Wednesday',type:'gym', label:'Upper Pull + Core 💪', detail:'Pull-Ups 4×8 · Cable Row 4×10 · Face Pulls 3×15 · Curls 3×12 · Dead Bug 3×10 · Hanging Leg Raises 3×12'},
   {day:'Thursday', type:'cardio', label:'Endurance + Glute Work 🏃', detail:'Bike/Elliptical 25min · Hip Thrust 3×12 · Step-Up 3×10/leg · Side-Lying Clam 3×15 · Banded Walk 3×20'},
   {day:'Friday',   type:'gym', label:'Knee Strength + Core 💪', detail:'Step-Down 3×10 · VMO Squat (shallow) 3×12 · Hip Bridge 3×15 · Nordic Curl 3×8 · Ab Wheel 3×10 · Leg Raise 3×12'},
-  {day:'Saturday', type:'run', label:'Long Cardio 🚴', detail:'Wk1–4: Bike 35min · Wk5–8: Jog/Walk intervals 5–7km · Wk9+: Continuous run 8–10km'},
+  {day:'Saturday', type:'run', label:'Long Run 🏃', detail:'Wk1: 15min · Wk2: 20min · Wk3: 25min · Wk4: 30min · Wk5: 35min · Wk6: 40min · Wk7: 50min · Wk8: 60min · Wk9: 70min · Wk10+: 10km 🎯 — all at comfortable 8kmph'},
   {day:'Sunday',   type:'rest',label:'Rest + Recovery 😴', detail:'Foam roll ITB · quad stretch · hip flexor stretch · 20min walk max'},
 ];
 const CHECKS = ['500ml water on waking 💧','Drink 3.5L water today (14 glasses) 💧','Hit 130g protein 🥩','Train as scheduled 🔥','Sleep by 10 PM 😴','Supplements (Zinc/Biotin/D3) 💊','5-min scalp massage 🧴','Stick to smoking limit 🚭'];
